@@ -1,0 +1,320 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+
+  font-size: 62.5%;
+
+  --ff-heading: 'Staatliches', cursive;
+  --ff-text: 'Palanquin', cursive;
+  --fs-heading: 4rem;
+  --fs-text: 2rem; 
+
+  --bgc-header: #8E9AAF;
+  --bgc-body: #E5E5E5;
+  --bgc-balao:#FEEAFA;
+}
+
+body {
+  background-color: var(--bgc-body);
+}
+
+header {
+  text-align: center;
+  
+  width: 100%;
+  min-height: 28rem;
+  height: 100%;
+  background-color: var(--bgc-header);
+}
+header img {
+  padding-top: 3.2rem;
+  padding-bottom: 4px;
+}
+
+header #deskImg {
+  display: none;
+}
+
+header h1 {
+  color: white;
+  font-family: var(--ff-heading);
+  font-weight: 400;
+  font-size: var(--fs-heading);
+  line-height: 3.4rem;
+  letter-spacing: 0.05em;
+
+  height: 4.9rem;
+  width: 100%;
+
+  padding: 8px 0;
+  background-color: #CBC0D3;
+}
+
+header p {
+  display: none;
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3.2rem;
+  margin: 0 auto;
+}
+
+.text-mobile { 
+    font-family: var(--ff-text);
+    text-align: center;
+    font-weight: 500;
+    font-size: 1.8rem; 
+    line-height: 1.5rem;
+    color: #23053A;
+  
+    height: 7.5rem;
+    width: 30.5rem;
+  
+    margin: 1.4rem auto 6.3rem;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin-bottom: 3.2rem;
+
+  border-radius: 2rem;
+}
+
+.card { 
+  position: relative;
+
+  animation: downTop 700ms;
+}
+
+.cards-wrapper .cardP, .cards-wrapper .cardU {
+  animation: downTop 700ms;
+}
+
+.card h2 {
+  position: absolute;
+
+  top: 1.6rem;
+  right: 1.6rem;
+
+  height: 3.5rem;
+  width: 11rem;
+
+  background: var(--bgc-balao);
+  border-radius: 20px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 2.4rem;
+
+  font-family: 'Staatliches';
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+  letter-spacing: 0.05em;
+
+  color:s #4A4E69;
+
+  animation: topDown 1s forwards;
+}
+
+footer {
+  display: none;
+}
+
+.cardP, .cardU {
+  display: none;
+}
+
+@keyframes downTop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes topDown {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(15px);
+  }
+}
+
+@keyframes rightToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  .cards-wrapper {
+    display: grid;
+    gap: 3.2rem;
+
+    grid-template-areas: 
+    "A B"
+    "C D";
+  }
+
+  .cards-wrapper .card:nth-child(2) {
+    grid-area: C;
+  }
+
+  .cards-wrapper .card:nth-child(3) {
+    grid-area: A;
+  }
+
+  .cards-wrapper .card:nth-child(4) {
+    grid-area: D;
+  }
+  .cards-wrapper .card:nth-child(5) {
+    grid-area: B;
+  }
+
+  .card img {
+    width: 32rem;
+    height: auto;
+  }  
+
+  .text-mobile {
+    width: 40rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .page {
+    display: flex;
+    gap: 10rem;
+    max-width: 120rem;
+  }
+
+
+  main {
+    width: 100%;
+  }
+
+  header {
+    min-height: 100vh;
+    min-width: 35rem;
+    max-width: 40rem;
+  }
+
+  header img {
+    display: none;
+  }
+
+  header #deskImg {
+    display: inline;
+  }
+
+  header p {
+    display: flex;
+    align-items: center;
+
+    width: 27.5rem;
+    height: 26.2rem;
+
+    font-family: 'Roboto';
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+
+    margin: 6rem auto 8rem;
+
+    color: #FFFFFF;
+  }
+
+  .text-mobile {
+    display: none;
+  }
+
+  .cards-wrapper {
+    margin: 6.4rem 2rem 5.4rem;
+    display: grid;
+    gap: 3.2rem;
+    grid-template-areas: 
+    "A B E"
+    "D B F"
+    "D C F";
+  }
+  .cards-wrapper .card:nth-child(1) {
+    grid-area: A;
+  }
+
+  .cards-wrapper .card:nth-child(2) {
+    grid-area: B;
+  }
+
+  .cards-wrapper .card:nth-child(3) {
+    grid-area: C;
+  }
+  .cards-wrapper .card:nth-child(4) {
+    grid-area: D;
+  }
+
+  .cardP {
+    grid-area: E;
+    display: grid;
+  }
+  .cardU {
+    grid-area: F;
+    display: grid;
+  }
+
+  .card h2 {
+    display: none;
+  }
+
+  .card img, .cardP img, .cardU img {
+    height: auto;
+    object-fit: cover;  
+    width: 22rem;
+    margin-bottom: 0;
+  }
+
+
+  .contact {
+    margin: 0 auto;
+    display: block;
+    font-family: 'Roboto';
+    text-align: center; 
+    font-size: 1.4rem;
+    line-height: 2.8rem;
+    color: #4A4E69;
+    width: 59rem;
+  }
+
+  .contact a {
+    text-decoration: none;
+  }
+  
+
+}
